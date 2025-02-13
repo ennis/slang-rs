@@ -16,7 +16,7 @@ pub use sys::{
 	SlangMatrixLayoutMode as MatrixLayoutMode, SlangOptimizationLevel as OptimizationLevel,
 	SlangParameterCategory as ParameterCategory, SlangResourceShape as ResourceShape,
 	SlangScalarType as ScalarType, SlangSourceLanguage as SourceLanguage, SlangStage as Stage,
-	SlangTypeKind as TypeKind, SlangUUID as UUID,
+	SlangTypeKind as TypeKind, SlangUUID as UUID, SlangDeclKind as DeclKind,
 };
 
 macro_rules! vcall {
