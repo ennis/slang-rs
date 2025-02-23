@@ -12,11 +12,12 @@ use slang_sys as sys;
 pub use sys::{
 	slang_CompilerOptionName as CompilerOptionName, SlangBindingType as BindingType,
 	SlangCompileTarget as CompileTarget, SlangDebugInfoLevel as DebugInfoLevel,
-	SlangFloatingPointMode as FloatingPointMode, SlangLineDirectiveMode as LineDirectiveMode,
-	SlangMatrixLayoutMode as MatrixLayoutMode, SlangOptimizationLevel as OptimizationLevel,
-	SlangParameterCategory as ParameterCategory, SlangResourceShape as ResourceShape,
-	SlangScalarType as ScalarType, SlangSourceLanguage as SourceLanguage, SlangStage as Stage,
-	SlangTypeKind as TypeKind, SlangUUID as UUID, SlangDeclKind as DeclKind,
+	SlangFloatingPointMode as FloatingPointMode, SlangImageFormat as ImageFormat,
+	SlangLineDirectiveMode as LineDirectiveMode, SlangMatrixLayoutMode as MatrixLayoutMode,
+	SlangOptimizationLevel as OptimizationLevel, SlangParameterCategory as ParameterCategory,
+	SlangResourceShape as ResourceShape, SlangScalarType as ScalarType,
+	SlangSourceLanguage as SourceLanguage, SlangStage as Stage, SlangTypeKind as TypeKind,
+	SlangUUID as UUID, SlangDeclKind as DeclKind,
 };
 
 macro_rules! vcall {
@@ -47,14 +48,6 @@ impl std::fmt::Debug for Error {
 		}
 	}
 }
-
-impl std::fmt::Display for Error {
-	fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-		std::fmt::Debug::fmt(self, f)
-	}
-}
-
-impl std::error::Error for Error {}
 
 pub type Result<T> = std::result::Result<T, Error>;
 
